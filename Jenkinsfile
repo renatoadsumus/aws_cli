@@ -11,19 +11,17 @@ pipeline {
         stage('Build') { 
             steps {
                 echo "Construindo a imagem Docker com AWS CLI" 	
-				sh "docker build -t aws_cli:lastet ."                
+				sh "docker build -t aws_cli:latest ."                
             }
         }
 		
 		stage('Run') { 
-            steps {
-				echo "Executando docker run -it --name aws_container -e AWS_ACCESS_KEY_ID='${params.AWS_ACCESS_ID}' -e AWS_SECRET_ACCESS_KEY='${params.AWS_SECRET_KEY}' aws_cli:lastet /bin/bash"
-				echo "Executando docker exec aws_container exec ./criar_s3.sh" 								
-				echo "Executando docker exec aws_container exec ./criar_eb.sh" 				
-                
-            }	
-			
-        }
+			steps {			
+			echo "Executando Container Docker AWS CLI"				
+			sh "docker run -d --name aws_container_geru -e AWS_ACCESS_KEY_ID='${params.AWS_ACCESS_KEY_ID}' -e AWS_SECRET_ACCESS_KEY='${params.AWS_SECRET_ACCESS_KEY}' aws_cli:latest"
+						
+			}			
+		}	
         
     }
  }
