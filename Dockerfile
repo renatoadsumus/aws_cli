@@ -47,5 +47,13 @@ EXPOSE 22 8143 4433 8170
 COPY criar_aplicacao_eb.sh  /
 RUN chmod +x /criar_aplicacao_eb.sh
 
+COPY deploy_ambiente_aws_s3_eb.sh  /
+RUN chmod +x /deploy_ambiente_aws_s3_eb.sh
+
 COPY criar_bucket_s3.sh  /
 RUN chmod +x /criar_bucket_s3.sh
+
+COPY criar_bucket_s3.sh  /
+RUN chmod +x /criar_bucket_s3.sh
+
+CMD /usr/local/bin/criar_ambiente_aws_s3_eb.sh
