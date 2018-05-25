@@ -2,23 +2,16 @@ pipeline {
     agent any 
     parameters {
        
-        string(defaultValue: "", description: 'Credencias da AWS', name: 'AWS_SECRET_ACCESS_KEY')
-        string(defaultValue: "", description: 'Credencias da AWS', name: 'AWS_ACCESS_KEY_ID')
+         string(defaultValue: "", description: 'Credencias da AWS', name: 'AWS_ACCESS_KEY_ID')
+		 string(defaultValue: "", description: 'Credencias da AWS', name: 'AWS_SECRET_ACCESS_KEY')
     }
     
-    stages {
-	
-	stage('Clone Repository') { 
-            steps {
-                checkout scm              
-            }
-        }
-		
+    stages {		
 		
         stage('Build') { 
             steps {
-                app = docker.build("renatoadumus/jenkins")
-				echo "Construindo a imagem AWS CLI - docker build -t aws_cli:lastet"                
+                echo "Construindo a imagem Docker com AWS CLI" 	
+				sh "docker build -t aws_cli:lastet ."                
             }
         }
 		
