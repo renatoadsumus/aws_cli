@@ -1,4 +1,5 @@
 #!/bin/bash
+############### PASSOS PARA CRIAR E DEPLOY NO S3 #########################
 echo "Criando Bucket S3"
 aws s3api create-bucket --bucket bucket-geru-renato-coutinho --region us-east-1 --acl public-read-write
 sleep 2

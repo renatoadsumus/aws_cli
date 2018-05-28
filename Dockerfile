@@ -47,13 +47,16 @@ EXPOSE 22 8143 4433 8170
 COPY criar_aplicacao_eb.sh  /
 RUN chmod +x /criar_aplicacao_eb.sh
 
-COPY deploy_ambiente_aws_s3_eb.sh  /
-RUN chmod +x /deploy_ambiente_aws_s3_eb.sh
-
 COPY criar_bucket_s3.sh  /
 RUN chmod +x /criar_bucket_s3.sh
 
-COPY criar_ambiente_aws_s3_eb.sh  /
-RUN chmod +x /criar_ambiente_aws_s3_eb.sh
+COPY deploy_aplicacao_eb.sh  /
+RUN chmod +x /deploy_aplicacao_eb.sh
 
-CMD ./criar_ambiente_aws_s3_eb.sh
+COPY deploy_bucket_s3.sh  /
+RUN chmod +x /deploy_bucket_s3.sh
+
+COPY aws_deploy.sh  /
+RUN chmod +x /aws_deploy.sh
+
+CMD ./aws_deploy.sh
