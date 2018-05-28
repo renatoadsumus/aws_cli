@@ -1,11 +1,5 @@
 pipeline {
-    agent any 
-    parameters {
-       
-         string(defaultValue: "", description: 'Credencias da AWS', name: 'AWS_ACCESS_KEY_ID')
-		 string(defaultValue: "", description: 'Credencias da AWS', name: 'AWS_SECRET_ACCESS_KEY')
-    }
-    
+    agent any     
     stages {		
 		
         stage('Build image') { 
