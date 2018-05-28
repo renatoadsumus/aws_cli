@@ -9,4 +9,4 @@ aws elasticbeanstalk create-application-version --application-name app-geru-rena
 
 echo "Criando Ambiente no Elastic Beanstalk"
 sleep 2
-aws elasticbeanstalk create-environment --cname-prefix app-geru-desafio --application-name app-geru-renato --version-label ${VERSAO} --environment-name geru-env-docker --solution-stack-name "64bit Amazon Linux 2018.03 v2.10.0 running Docker 
+aws elasticbeanstalk create-environment --cname-prefix app-geru-desafio --application-name app-geru-renato --version-label ${VERSAO} --environment-name geru-env-docker --solution-stack-name "64bit Amazon Linux 2018.03 v2.10.0 running Docker 17.12.1-ce" 
