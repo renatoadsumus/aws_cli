@@ -59,4 +59,4 @@ RUN chmod +x /deploy_bucket_s3.sh
 COPY aws_deploy.sh  /
 RUN chmod +x /aws_deploy.sh
 
-CMD ./aws_deploy.sh
+CMD ./aws_deploy.sh $OPCAO
