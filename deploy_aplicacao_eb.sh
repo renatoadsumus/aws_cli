@@ -1,9 +1,7 @@
 #!/bin/bash
-sleep 10
+sleep 5
 echo "Deploy nova versao no EB"
-aws elasticbeanstalk create-application-version --application-name app-geru-renato --version-label ${VERSAO} --source-bundle S3Bucket=bucket-geru-renato-coutinho,S3Key=app_geru_eb.zip
+aws elasticbeanstalk create-application-version --application-name app-renato-coutinho --version-label ${VERSAO} --source-bundle S3Bucket=bucket-itau-renato-coutinho,S3Key=app_eb.zip
 
-sleep 10
-aws elasticbeanstalk update-environment --environment-name geru-env-docker --version-label ${VERSAO}
-
-sleep 10
+sleep 5
+aws elasticbeanstalk update-environment --environment-name itau-env-docker --version-label ${VERSAO}
