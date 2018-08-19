@@ -5,6 +5,7 @@ FROM centos:7
 # docker run -rm -v LOCAL://opt/artefato_deploy awscli:1.0
 
 #docker run --rm -v LOCAL://opt/artefato_deploy -e AWS_ACCESS_KEY_ID='${params.AWS_ACCESS_KEY_ID}' -e AWS_SECRET_ACCESS_KEY='${params.AWS_SECRET_ACCESS_KEY}' -e VERSAO='${env.BUILD_ID}' -e OPCAO='Novo' renatoadsumus/aws_cli:1.0"
+##docker run --rm -v LOCAL://opt/artefato_deploy -e AWS_ACCESS_KEY_ID='${params.AWS_ACCESS_KEY_ID}' -e AWS_SECRET_ACCESS_KEY='${params.AWS_SECRET_ACCESS_KEY}' -e VERSAO='${env.BUILD_ID}' -e OPCAO='Deploy' renatoadsumus/aws_cli:1.0"
 
 
 ENV PATH="/opt/puppetlabs/bin/:${PATH}"
