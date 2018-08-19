@@ -1,5 +1,12 @@
 FROM centos:7
 
+###USO###
+
+# docker run -rm -v LOCAL://opt/artefato_deploy awscli:1.0
+
+#docker run --rm -v LOCAL://opt/artefato_deploy -e AWS_ACCESS_KEY_ID='${params.AWS_ACCESS_KEY_ID}' -e AWS_SECRET_ACCESS_KEY='${params.AWS_SECRET_ACCESS_KEY}' -e VERSAO='${env.BUILD_ID}' -e OPCAO='Novo' renatoadsumus/aws_cli:1.0"
+
+
 ENV PATH="/opt/puppetlabs/bin/:${PATH}"
 
 ### CHAVE DE ACESSO AWS PELO COMMAND LINE -  CLI
@@ -39,6 +46,8 @@ RUN rpm -i /opt/pe-client-tools-18.1.0-1.el7.x86_64.rpm
 
 RUN mkdir -p .config/ssl/cert/ \
 && mkdir -p .config/puppetlabs/client-tools/
+
+RUN mkdir /opt/artefato_deploy
 
 ENV PATH=~/.local/bin:$PATH
 
