@@ -1,5 +1,5 @@
 #!/bin/bash
-if [ "$1" = "Deploy" ]
+if [ "$1" = "DeployRecorrente" ]
 then
     ./deploy_bucket_s3.sh
 	sleep 5
