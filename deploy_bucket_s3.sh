@@ -7,6 +7,6 @@ zip -r app_eb.zip .
 
 sleep 2
 echo "Enviando artefato_deploy para S3"
-aws s3 cp app_eb.zip s3://bucket-jexia-renato-coutinho
+aws s3 cp app_eb.zip s3://bucket-${APP_NAME}-renato-coutinho
 
-####http://bucket-jexia-renato-coutinho.s3.amazonaws.com/app_jexia_eb.zip
+####http://bucket-${APP_NAME}-renato-coutinho.s3.amazonaws.com/app_${APP_NAME}_eb.zip

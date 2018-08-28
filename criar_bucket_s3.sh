@@ -2,7 +2,7 @@
 ############### PASSOS PARA CRIAR E DEPLOY NO S3 #########################
 
 echo "Criando Bucket S3"
-aws s3api create-bucket --bucket bucket-jexia-renato-coutinho --region us-east-1 --acl public-read-write
+aws s3api create-bucket --bucket bucket-${APP_NAME}-renato-coutinho --region us-east-1 --acl public-read-write
 
 sleep 2
 echo "Zipando a pasta artefato_deploy enviar para S3"
@@ -12,4 +12,4 @@ zip -r app_eb.zip .
 
 sleep 2
 echo "Enviando artefato_deploy para S3"
-aws s3 cp app_eb.zip s3://bucket-jexia-renato-coutinho
+aws s3 cp app_eb.zip s3://bucket-${APP_NAME}-renato-coutinho
